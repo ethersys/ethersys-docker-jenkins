@@ -5,7 +5,6 @@ USER root
 RUN apt-get update \
     && apt-get install -y \
           sudo \
-          lsb-core \
           software-properties-common \
           apt-transport-https \
           apt-transport-https \
