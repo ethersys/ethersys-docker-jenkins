@@ -1,5 +1,9 @@
 FROM jenkins/jenkins:lts
 
+LABEL org.opencontainers.image.authors="contact@ethersys.fr"
+LABEL org.opencontainers.image.source="https://github.com/ethersys/ethersys-docker-jenkins"
+LABEL org.opencontainers.image.description="Official Jenkins LTS image with Docker binaries"
+
 USER root
 
 RUN apt-get update \
