@@ -6,7 +6,7 @@ on:
       - 'master'
 
 jobs:
-  docker:
+  Build-and-Push-Container:
     runs-on: ubuntu-latest
     steps:
       -
