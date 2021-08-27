@@ -28,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/ethersys/jenkins:latest
+          tags: ghcr.io/ethersys/jenkins:latest,ghcr.io/ethersys/jenkins:2.303.1
