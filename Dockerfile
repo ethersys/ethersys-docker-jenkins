@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.303.1
+FROM jenkins/jenkins:2.313
 
 LABEL org.opencontainers.image.authors="contact@ethersys.fr"
 LABEL org.opencontainers.image.source="https://github.com/ethersys/ethersys-docker-jenkins"
