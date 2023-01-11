@@ -5,6 +5,9 @@ on:
     branches:
       - 'master'
 
+env:
+  JENKINS_VERSION: 2.375.2
+
 jobs:
   Build-and-Push-Container:
     runs-on: ubuntu-latest
@@ -28,4 +31,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/ethersys/jenkins:latest,ghcr.io/ethersys/jenkins:2.375.1
+          tags: ghcr.io/ethersys/jenkins:latest,ghcr.io/ethersys/jenkins:$JENKINS_VERSION
