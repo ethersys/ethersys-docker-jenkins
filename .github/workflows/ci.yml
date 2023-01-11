@@ -30,5 +30,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
+          build-args: JENKINS_VERSION=${{ env.JENKINS_VERSION }}
           push: true
           tags: ghcr.io/ethersys/jenkins:latest,ghcr.io/ethersys/jenkins:${{ env.JENKINS_VERSION }}
