@@ -1,3 +1,4 @@
+ARG JENKINS_VERSION=latest
 FROM jenkins/jenkins:$JENKINS_VERSION
 
 LABEL org.opencontainers.image.authors="contact@ethersys.fr"
