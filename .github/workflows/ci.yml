@@ -6,7 +6,7 @@ on:
       - 'master'
 
 env:
-  JENKINS_VERSION: 2.440.3
+  JENKINS_VERSION: 2.452.1
 
 jobs:
   Build-and-Push-Container:
