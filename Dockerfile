@@ -7,14 +7,18 @@ LABEL org.opencontainers.image.description="Official Jenkins LTS image with Dock
 
 USER root
 
+RUN install -m 0755 -d /etc/apt/keyrings
+
 RUN apt-get update \
     && apt-get install -y \
           sudo \
           software-properties-common \
           apt-transport-https \
-          apt-transport-https \
-    && curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add - \
-    && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
+    && curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc \
+    && chmod a+r /etc/apt/keyrings/docker.asc \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 RUN apt-get update \
     && apt-get install -y \
