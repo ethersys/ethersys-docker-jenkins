@@ -30,10 +30,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && echo 'jenkins ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
+RUN echo "alias docker-compose=\"docker compose\"" >> /etc/bash.bashrc
+
 RUN usermod -a -G docker jenkins
 RUN usermod -a -G 999 jenkins
-
-RUN curl -L https://github.com/docker/compose/releases/download/v2.32.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
-    && chmod +x /usr/local/bin/docker-compose
 
 USER jenkins
