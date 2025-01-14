@@ -31,6 +31,8 @@ RUN apt-get update \
     && echo 'jenkins ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 RUN echo "alias docker-compose=\"docker compose\"" >> /etc/bash.bashrc
+RUN printf "#!/bin/sh\nexec docker compose \"\$@\"\n" > /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
 RUN usermod -a -G docker jenkins
 RUN usermod -a -G 999 jenkins
