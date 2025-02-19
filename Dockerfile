@@ -35,6 +35,7 @@ RUN printf "#!/bin/sh\nexec docker compose \"\$@\"\n" > /usr/local/bin/docker-co
 RUN chmod +x /usr/local/bin/docker-compose
 
 RUN usermod -a -G docker jenkins
+RUN usermod -a -G 996 jenkins
 RUN usermod -a -G 999 jenkins
 
 USER jenkins
