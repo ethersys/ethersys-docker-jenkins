@@ -6,7 +6,7 @@ on:
       - 'master'
 
 env:
-  JENKINS_VERSION: "2.500"
+  JENKINS_VERSION: "2.492.3-lts-jdk21"
 
 jobs:
   Build-and-Push-Container:
